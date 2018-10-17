@@ -1,0 +1,46 @@
+
+app.component.ts
+--------------------
+export class AppComponent {
+
+public youtubename = "Ujjwal Technical Tips Data is coming from  parents";
+
+
+app.component.html
+--------------------
+<app-services [parentdata] = "youtubename"></app-services>
+
+
+---------------------------------------------------------------------------------------------
+services.component.ts
+--------------------
+import { Component, OnInit, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-services',
+  templateUrl: './services.component.html',
+  styleUrls: ['./services.component.css']
+})
+export class ServicesComponent implements OnInit {
+
+  constructor() {
+ }
+
+  ngOnInit() {
+  }
+
+  favcolor = "black";
+
+inlinecss = {
+  'color':'red'
+}
+
+
+@Input() public parentdata;
+
+}
+----------------------------------------------------------------------------------------------
+services.component.html
+{{parentdata}}
+
+
